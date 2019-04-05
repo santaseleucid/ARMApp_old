@@ -24,7 +24,8 @@ passport.use(new GoogleStrategy
     ({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: '/auth/google/callback', // this is a relative path. so it defaults to http not https. since this is auth it should be https in production 
+    proxy: true
     }, 
     (accessToken, refreshToken, profile, done) => 
     {
