@@ -9,6 +9,17 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users'); //1 argument inside model(one) means read 2 arguments model(one, two) means write
 
+passport.serializeUser((user,done) =>{
+    done(null, user.id);  
+}); 
+
+passport.deserializeUser((id, done)=>{
+    User.findById(id)
+        .then(user => {
+            done(null, user);
+        });
+});
+
 passport.use(new GoogleStrategy
     ({
     clientID: keys.googleClientID,
