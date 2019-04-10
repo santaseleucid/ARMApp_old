@@ -8,6 +8,7 @@ const passport = require('passport')
 //app is an express object. It is passed here from index.js
 module.exports = (app) =>{
 
+//log in via google 
     app.get(
         '/auth/google', 
         passport.authenticate('google', {
@@ -15,14 +16,21 @@ module.exports = (app) =>{
         })
     );
 
+//google knows to kick user back to /callback. this is the response route
+    app.get(
+        '/auth/google/callback', 
+        passport.authenticate('google'),
+        (req, res) => {
+            res.redirect('/surveys'); 
+        }); 
 
-    app.get('/auth/google/callback', passport.authenticate('google')); 
-
+//logout user
     app.get('/api/logout', (req,res) => {
         req.logout(); 
-        res.send(req.user);
+        res.redirect('/');
     });
 
+//current user
     app.get('/api/current_user',(req,res)=>{
         res.send(req.user);
     });

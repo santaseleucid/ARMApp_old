@@ -25,22 +25,14 @@ passport.use(new GoogleStrategy
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback', // this is a relative path. so it defaults to http not https. since this is auth it should be https in production 
-    proxy: true
+    proxy: true //passport proxy will take care of proper routing 
     }, 
-    (accessToken, refreshToken, profile, done) => 
-    {
-        User.findOne({ googleId: profile.id })
-            .then((existingUser)=>{
-                if(existingUser){
-                    // we already have a record with given user id
-                    done(null, existingUser); 
-                }else{
-                    new User({ 
-                        googleId: profile.id
-                    }).save()
-                        .then(user => done(null, user));
-                }
-            })
-    }
-    )
+    async (accessToken, refreshToken, profile, done) => {
+        const existingUser = await User.findOne({ googleId: profile.id })
+            if(existingUser){
+                return done(null, existingUser); 
+            }
+            const user = await new User({ googleId: profile.id}).save()
+            done(null,user);             
+    })
 ); 
