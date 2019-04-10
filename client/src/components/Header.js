@@ -7,13 +7,14 @@ class Header extends Component {
 
   renderContent(){
     switch(this.props.auth){
-      case null:
-        return ; 
-      case false:
+      //case null:
+        //return ; 
+      //case false:
         //return <li><a href = "/auth/google">Login With Google</a></li>; 
-        return <li>Login</li>
+        //return <li>Login</li>
       default:
-        return <li><a href = "/api/logout">Logout</a></li>;
+        //return <li><a href = "/api/logout">Logout</a></li>;
+        return;
     }
   }
 
@@ -22,8 +23,8 @@ class Header extends Component {
     return (
       <div>
         <nav>
-            <div className ="nav-wrapper light-blue lighten 4">
-              <Link to = {this.props.auth ? '/surveys' : '/'} className ="left brand-logo">
+            <div className ="nav-wrapper grey darken-4">
+              <Link to = {this.props.auth ? '/surveys' : '/'} className ="left brand-logo grey darken-4">
                 ARM
               </Link>
               <ul className ="right">

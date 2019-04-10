@@ -27,12 +27,14 @@ export class MapContainer extends Component {
   }
 
   openWindow(id){
+    console.log("before: "+this.state.lines[id].draw.strokeColor);
     var linesTemp = this.state.lines; 
     linesTemp[id].infoVisible = true; 
-    this.setState(
-      {lines: linesTemp}
-    ) ;
-  }
+    // /linesTemp[id].draw.strokeColor = "#000000"; 
+    console.log("me");
+    console.log("temp: "+linesTemp[id].draw.strokeColor); 
+    this.setState({lines:linesTemp}, function(){console.log("after: "+this.state.lines[id].draw.strokeColor); })
+  } ;
 
   closeWindow(id){
     var linesTemp = this.state.lines; 
@@ -52,8 +54,6 @@ export class MapContainer extends Component {
         </h4>
         <p>
             {"fix viewport"}
-            {<br/>}
-            {"data from test api is missing points"}
             {<br/>}
             <a href = "/api/coord">See Data - Endpoint</a>
         </p>
