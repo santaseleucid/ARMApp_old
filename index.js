@@ -39,10 +39,10 @@ authRoutes(app);
 //If in production environment and routes are not defined by express, then look in frontend build dir
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build')); 
-    
+
     const path = require('path'); 
     app.get('*', (req,res)=>{
-        res.sendFile(path.resolve(__dirnname, 'client', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirnname, 'client/build/index.html'));
     });
 }
 
