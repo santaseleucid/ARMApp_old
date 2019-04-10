@@ -18,7 +18,7 @@ export class MapContainer extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000/api/coord')
+    fetch('/api/coord')
     .then(response => response.json())
     .then(json => {
       this.setState({lines: json})
