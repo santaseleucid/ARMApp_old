@@ -42,7 +42,7 @@ if(process.env.NODE_ENV === 'production'){
 
     const path = require('path'); 
     console.log(path); 
-    app.get('/map', (req,res)=>{
+    app.use('*', (req,res)=>{
         res.sendFile(path.join(__dirnname+'client/build/index.html'));
     });
 }
