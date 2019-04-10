@@ -1,8 +1,9 @@
 # ARMApp
-Author: Sanjay Abraham
-Date: 9th April 2019
-Comments: I should be studying for my exam right now.
-Private repository for Advanced Rail Management's ARMapp tool.
+
+Author: Sanjay Abraham <br>
+Date: 9th April 2019 <br>
+Comments: I should be studying for my exam right now. <br>
+Private repository for Advanced Rail Management's ARMapp tool. <br>
 
 Production Demo @ https://tranquil-retreat-43326.herokuapp.com
 
