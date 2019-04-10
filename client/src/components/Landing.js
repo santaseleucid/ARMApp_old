@@ -5,9 +5,9 @@ export class Landing extends Component {
     return (
       <div style = {{ textAlign: 'center'}}>
         <h1>
-            Emaily!
+            ARMapp 
         </h1>
-        Collect feedback from your users
+        Currently in development 
       </div>
     )
   }

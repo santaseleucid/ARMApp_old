@@ -5,7 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "css": "^2.2.4",
+    "google": "^2.1.0",
+    "google-maps-react": "^2.0.2",
     "http-proxy-middleware": "^0.19.1",
+    "maps": "^0.3.3",
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.8.6",

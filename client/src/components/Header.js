@@ -20,12 +20,20 @@ class Header extends Component {
     return (
       <div>
         <nav>
-            <div className ="nav-wrapper">
+            <div className ="nav-wrapper light-blue lighten 4">
               <Link to = {this.props.auth ? '/surveys' : '/'} className ="left brand-logo">
-                Emaily
+                ARM
               </Link>
               <ul className ="right">
-                { this.renderContent() }
+                <li>
+                  <Link to = {'/map'}>
+                    Map
+                  </Link>
+                </li>
+                <li>
+                  { this.renderContent() }
+                </li>
+                
               </ul>
             </div>
           </nav>
