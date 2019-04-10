@@ -43,7 +43,7 @@ if(process.env.NODE_ENV === 'production'){
     const path = require('path'); 
     console.log(path); 
     app.use('*', (req,res)=>{
-        res.sendFile(path.join(__dirnname+'client/build/index.html'));
+        res.sendFile(path.join(__dirnname+'/client/build/index.html'));
     });
 }
 
